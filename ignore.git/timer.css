@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #67a180;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #281597;
+    margin-bottom: 10px;
+}
+
+#date {
+    font-size: 24px;
+}
+
+#num {
+    font-size: 20px;
+}
+
+#num1 {
+    font-size: 16px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Task timing</title>
+    <link rel="stylesheet" href="timer.css">
+   
+</head>
+<body>
+   <h1 id="date">Date</h1>
+   <h2 id="num">Month</h2>
+   <h3 id="num1">year</h3>
+   
+    <script>
+        var currentDate = new Date();
+        console.log(currentDate);
+
+
+        document.getElementById("date").innerText = currentDate.toDateString();
+        document.getElementById("num").innerText = currentDate.toDateString();
+        document.getElementById("num1").innerText = currentDate.toDateString();
+
+const date = currentDate.toLocaleString('default', {day:"2-digit", month:"short", year:"numeric",
+                             hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h24"});
+const month = currentDate.toLocaleString('default', { month:'long'}); // Aug
+const year = currentDate.getFullYear();
+
+function updatingClock() {
+var currentTime = new Date(),
+    month = currentTime.getMonth() + 1,
+    day = currentTime.getDate(),
+    year = currentTime.getFullYear(),
+    hours = currentTime.getHours(),
+    minutes = currentTime.getMinutes(),
+    seconds = currentTime.getSeconds(),
+    text = (month + "/" + day + "/" + year + ' ' + hours + ':' + minutes + ':' + seconds);
+// here we get the element with the id of "date" and change the content to the text variable we made above
+document.getElementById('date').innerHTML = text;
+}
+
+// here we run the updatingClock function every 1000ms (1 second)
+setInterval(updatingClock, 1000);
+
+
+function updateClock(){
+    var currentTime = Date(),
+    month = currentTime.getMonth() + 1,
+    day = currentTime.getDate(),
+    year = currentTime.getFullYear(),
+    hours = currentTime.getHours(),
+    minutes = currentTime.getMinutes(),
+    seconds = currentTime.getSeconds(),
+    text = (month + "/" + day + "/" + year + ' ' + hours + ':' + minutes + ':' + seconds);
+    document.getElementById('num').innerHTML = text;
+
+    setInterval(updateClock, 1000);
+}
+    </script>
+
+
+</body>
+</html>
